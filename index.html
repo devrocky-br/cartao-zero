@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartão Zero — Quite sua fatura em 90 dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0D0D0D;
+  --ink2:    #2A2A2A;
+  --ink3:    #5A5A5A;
+  --paper:   #F8F6F1;
+  --paper2:  #EDEAE2;
+  --line:    #D8D4C8;
+  --blue:    #1B3FE4;
+  --blue-dk: #0F2AA8;
+  --blue-lt: #EEF2FF;
+  --amber:   #B45309;
+  --amber-bg:#FFFBEB;
+  --amber-bd:#D97706;
+  --red:     #B91C1C;
+  --green:   #15803D;
+  --white:   #FFFFFF;
+  --r: 6px;
+  --max: 680px;
+  --sans: 'DM Sans', sans-serif;
+  --display: 'Syne', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  background: var(--ink);
+  color: var(--white);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-stripe {
+  height: 5px;
+  background: var(--blue);
+  width: 100%;
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 24px 64px;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: #93C5FD;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(44px, 9vw, 72px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin-bottom: 24px;
+}
+.hero h1 span {
+  color: #60A5FA;
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: #CBD5E1;
+  line-height: 1.55;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-sub strong {
+  color: var(--white);
+  font-weight: 500;
+}
+.hero-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #94A3B8;
+}
+.hero-stat .n {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+}
+.hero-stat .lbl { line-height: 1.3; }
+.hero-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: #475569;
+}
+.hero-bg-text {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--display);
+  font-size: 200px;
+  font-weight: 800;
+  color: rgba(255,255,255,.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── SECTION BASE ──────────────────────────────────────────── */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+.section-label {
+  font-family: var(--display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+h2 {
+  font-family: var(--display);
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.body-text {
+  font-size: 15.5px;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ── DIVIDER ────────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* ── DOR SECTION ────────────────────────────────────────────── */
+.dor-bg {
+  background: var(--amber-bg);
+  border-top: 1px solid var(--amber-bd);
+  border-bottom: 1px solid var(--amber-bd);
+}
+.dor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 24px 0;
+}
+.dor-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.dor-list .icon {
+  width: 20px; height: 20px;
+  background: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.dor-callout {
+  background: var(--white);
+  border: 1px solid var(--amber-bd);
+  border-left: 4px solid var(--amber-bd);
+  border-radius: var(--r);
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--amber);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 24px;
+}
+
+/* ── DADOS ─────────────────────────────────────────────────── */
+.dados-bg {
+  background: var(--ink);
+}
+.dados-bg section {
+  color: var(--white);
+}
+.dados-bg h2 { color: var(--white); }
+.dados-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+.dado-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+  padding: 18px 16px;
+  text-align: center;
+}
+.dado-n {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 800;
+  color: #60A5FA;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.dado-lbl {
+  font-size: 12px;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+.dado-fonte {
+  font-size: 10px;
+  color: #475569;
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* ── MÉTODO ─────────────────────────────────────────────────── */
+.metodo-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 28px 0;
+  position: relative;
+}
+.metodo-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: var(--line);
+}
+.step {
+  display: flex;
+  gap: 18px;
+  padding: 18px 0;
+  position: relative;
+}
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-body {}
+.step-title {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.step-desc {
+  font-size: 14px;
+  color: var(--ink3);
+  line-height: 1.55;
+}
+
+/* ── CONTEÚDO ───────────────────────────────────────────────── */
+.conteudo-bg {
+  background: var(--paper2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.capitulos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 24px 0;
+}
+.capitulo {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.cap-badge {
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: var(--blue-lt);
+  border-radius: 4px;
+  padding: 3px 7px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.cap-titulo {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.cap-desc {
+  font-size: 12.5px;
+  color: var(--ink3);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.bonus-tag {
+  display: inline-block;
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-bd);
+  color: var(--amber);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ── PARA QUEM ──────────────────────────────────────────────── */
+.pq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.pq-card {
+  border-radius: var(--r);
+  padding: 18px 16px;
+}
+.pq-card.sim {
+  background: #F0FDF4;
+  border: 1px solid #86EFAC;
+}
+.pq-card.nao {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+}
+.pq-card h4 {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pq-card.sim h4 { color: var(--green); }
+.pq-card.nao h4 { color: var(--red); }
+.pq-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pq-card li {
+  font-size: 13px;
+  color: var(--ink2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+.pq-card li::before {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.pq-card.sim li::before { content: '✓'; background: var(--green); color: white; }
+.pq-card.nao li::before { content: '✕'; background: var(--red); color: white; }
+
+/* ── GARANTIA ───────────────────────────────────────────────── */
+.garantia-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 22px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+.garantia-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.garantia-body h3 {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.garantia-body p {
+  font-size: 14px;
+  color: var(--ink3);
+  line-height: 1.6;
+}
+
+/* ── CTA ────────────────────────────────────────────────────── */
+.cta-bg {
+  background: var(--ink);
+}
+.cta-bg section {
+  text-align: center;
+}
+.cta-bg h2 { color: var(--white); }
+.price-block {
+  margin: 32px auto;
+  max-width: 340px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.price-label {
+  font-size: 11px;
+  color: #94A3B8;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.price-main {
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.price-main sup {
+  font-size: 22px;
+  vertical-align: top;
+  margin-top: 8px;
+  display: inline-block;
+}
+.price-old {
+  font-size: 13px;
+  color: #475569;
+  text-decoration: line-through;
+  margin-bottom: 20px;
+}
+.btn-cta {
+  display: block;
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 17px 24px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .01em;
+  transition: background .15s;
+  text-align: center;
+}
+.btn-cta:hover { background: var(--blue-dk); }
+.btn-sub {
+  font-size: 11.5px;
+  color: #64748B;
+  margin-top: 12px;
+}
+.cta-includes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+}
+.cta-badge {
+  font-size: 12px;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.cta-badge::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #60A5FA;
+  flex-shrink: 0;
+}
+
+/* ── FAQ ────────────────────────────────────────────────────── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 24px 0;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 16px 18px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.faq-q:hover { background: var(--paper2); }
+.faq-arrow {
+  font-size: 16px;
+  color: var(--ink3);
+  transition: transform .2s;
+  flex-shrink: 0;
+}
+.faq-a {
+  display: none;
+  padding: 0 18px 16px;
+  font-size: 14px;
+  color: var(--ink3);
+  line-height: 1.65;
+  border-top: 1px solid var(--line);
+}
+.faq-item.open .faq-a { display: block; padding-top: 14px; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+/* ── RODAPÉ ─────────────────────────────────────────────────── */
+footer {
+  background: #0D0D0D;
+  border-top: 1px solid #1E2A3A;
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.7;
+}
+footer a { color: #64748B; text-decoration: none; }
+
+/* ── STICKY CTA (mobile) ────────────────────────────────────── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  border-top: 1px solid #1E2A3A;
+  padding: 12px 20px;
+  z-index: 100;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.sticky-price {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  white-space: nowrap;
+}
+.sticky-sub { font-size: 11px; color: #94A3B8; }
+.sticky-btn {
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.sticky-btn:hover { background: var(--blue-dk); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .dados-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .dado-n { font-size: 22px; }
+  .dado-lbl { font-size: 11px; }
+  .pq-grid { grid-template-columns: 1fr; }
+  .sticky-cta { display: flex; }
+  body { padding-bottom: 72px; }
+}
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-inner > * {
+  animation: fadeUp .5s ease both;
+}
+.hero-inner > *:nth-child(1) { animation-delay: .05s; }
+.hero-inner > *:nth-child(2) { animation-delay: .15s; }
+.hero-inner > *:nth-child(3) { animation-delay: .25s; }
+.hero-inner > *:nth-child(4) { animation-delay: .35s; }
+.hero-inner > *:nth-child(5) { animation-delay: .45s; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Guia prático — Método dos 3 Cortes</p>
+    <h1>Cartão<br><span>Zero</span></h1>
+    <p class="hero-sub">
+      Como quitar sua fatura em 90 dias<br>
+      <strong>mesmo ganhando até R$4.000</strong>
+    </p>
+    <div class="hero-data">
+      <div class="hero-stat">
+        <div>
+          <div class="n">78,9%</div>
+          <div class="lbl">das famílias brasileiras<br>terminaram 2025 endividadas</div>
+        </div>
+      </div>
+      <div class="hero-dot"></div>
+      <div class="hero-stat">
+        <div>
+          <div class="n">85,1%</div>
+          <div class="lbl">têm dívida<br>no cartão de crédito</div>
+        </div>
+      </div>
+      <div class="hero-dot"></div>
+      <div class="hero-stat">
+        <div>
+          <div class="n">400%</div>
+          <div class="lbl">ao ano — juros médios<br>do rotativo no Brasil</div>
+        </div>
+      </div>
+    </div>
+    <a href="#comprar" class="btn-cta" style="display:inline-block;width:auto;padding:15px 32px;">
+      Quero sair do vermelho →
+    </a>
+    <div class="hero-bg-text" aria-hidden="true">90</div>
+  </div>
+</div>
+
+<!-- ── DOR ───────────────────────────────────────────────────── -->
+<div class="dor-bg">
+<section>
+  <p class="section-label">O problema</p>
+  <h2>Isso te parece familiar?</h2>
+  <p class="body-text">Você abre o aplicativo do cartão, vê a fatura, fecha o aplicativo. Todo mês a mesma coisa.</p>
+
+  <ul class="dor-list">
+    <li>
+      <div class="icon">✕</div>
+      Você paga o mínimo porque não sobra mais nada — e sabe que isso não resolve
+    </li>
+    <li>
+      <div class="icon">✕</div>
+      Cada mês que passa, a dívida parece crescer em vez de diminuir
+    </li>
+    <li>
+      <div class="icon">✕</div>
+      Você já tentou "se organizar" antes, funcionou por duas semanas, depois parou
+    </li>
+    <li>
+      <div class="icon">✕</div>
+      Os conselhos que você acha na internet foram escritos para quem tem sobra no mês
+    </li>
+    <li>
+      <div class="icon">✕</div>
+      Uma emergência vai aparecer, você vai usar o cartão de novo, e o ciclo recomeça
+    </li>
+  </ul>
+
+  <div class="dor-callout">
+    O problema não é falta de disciplina. É que ninguém nunca te deu um plano feito para o seu salário e a sua realidade.
+  </div>
+</section>
+</div>
+
+<!-- ── DADOS ─────────────────────────────────────────────────── -->
+<div class="dados-bg">
+<section>
+  <p class="section-label" style="color:#93C5FD">O contexto</p>
+  <h2>Você não está sozinho nessa</h2>
+  <p class="body-text" style="color:#94A3B8;">
+    O endividamento no cartão de crédito é o maior da história do Brasil. As pessoas não estão endividadas porque são irresponsáveis — estão endividadas porque os juros são predatórios e os conselhos financeiros disponíveis não servem para quem ganha pouco.
+  </p>
+  <div class="dados-grid">
+    <div class="dado-card">
+      <div class="dado-n">76M+</div>
+      <div class="dado-lbl">brasileiros com nome negativado em 2025</div>
+    </div>
+    <div class="dado-card">
+      <div class="dado-n">15%</div>
+      <div class="dado-lbl">ao mês — juros médios do rotativo do cartão</div>
+    </div>
+    <div class="dado-card">
+      <div class="dado-n">29,5%</div>
+      <div class="dado-lbl">do salário comprometido com dívidas nas famílias</div>
+    </div>
+  </div>
+  <p class="dado-fonte">Fontes: Serasa Experian 2025, CNC (PEIC dez/2025), Banco Central do Brasil</p>
+</section>
+</div>
+
+<!-- ── MÉTODO ─────────────────────────────────────────────────── -->
+<section>
+  <p class="section-label">Como funciona</p>
+  <h2>O Método dos 3 Cortes</h2>
+  <p class="body-text">Não é sobre cortar tudo e passar fome. É sobre identificar três gastos específicos que você pode suspender por 90 dias, redirecionar esse dinheiro para o cartão, e seguir um plano semana a semana.</p>
+
+  <div class="metodo-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Diagnóstico real</div>
+        <div class="step-desc">Você vai descobrir quanto deve de verdade — incluindo os parcelamentos que ficam "escondidos" na fatura futura. A maioria das pessoas deve o dobro do que acha.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Os 3 Cortes</div>
+        <div class="step-desc">Escolher três gastos específicos para pausar temporariamente. Não aleatoriamente — com critério, para liberar entre R$300 e R$600 por mês sem destruir sua rotina.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Plano semana a semana</div>
+        <div class="step-desc">12 semanas com ações específicas para cada período. Você sabe o que fazer na semana 5 — que é a mais difícil — antes de chegar nela.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Renegociação (quando necessário)</div>
+        <div class="step-desc">Como abordar o banco para trocar juros de 15% ao mês por 3% a 5% — sem segredo, sem vergonha, com script pronto.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-title">Blindagem pós-90 dias</div>
+        <div class="step-desc">Como não voltar para o ciclo. Uma regra simples que, mantida por 6 meses, praticamente elimina a chance de recaída.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── CONTEÚDO ───────────────────────────────────────────────── -->
+<div class="conteudo-bg">
+<section>
+  <p class="section-label">O que está incluído</p>
+  <h2>O que você recebe</h2>
+
+  <div class="capitulos">
+    <div class="capitulo">
+      <span class="cap-badge">Intro</span>
+      <div>
+        <div class="cap-titulo">Você não é irresponsável</div>
+        <div class="cap-desc">Por que a maioria dos conselhos financeiros não funciona para quem ganha até R$4.000.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Cap. 1</span>
+      <div>
+        <div class="cap-titulo">Você precisa saber quanto deve de verdade</div>
+        <div class="cap-desc">Como calcular o número real da dívida, incluindo parcelamentos futuros invisíveis. A armadilha do pagamento mínimo explicada com números.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Cap. 2</span>
+      <div>
+        <div class="cap-titulo">O Método dos 3 Cortes</div>
+        <div class="cap-desc">Como escolher os três gastos certos para pausar. Por que tentar cortar tudo sempre falha — e o que fazer diferente.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Cap. 3</span>
+      <div>
+        <div class="cap-titulo">O plano semana a semana</div>
+        <div class="cap-desc">12 semanas com ações específicas. Semana 1 até a semana 12 — incluindo o que fazer na semana 5, que é onde a maioria desiste.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Cap. 4</span>
+      <div>
+        <div class="cap-titulo">Renegociação — quando e como fazer</div>
+        <div class="cap-desc">Quando a renegociação faz sentido, quando não faz, e como abordar o banco com proposta concreta.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Cap. 5</span>
+      <div>
+        <div class="cap-titulo">Os 90 dias acabaram. E agora?</div>
+        <div class="cap-desc">A regra do cartão pago. Por que limite não é renda. Como construir a reserva que evita o próximo endividamento.</div>
+      </div>
+    </div>
+    <div class="capitulo">
+      <span class="cap-badge">Bônus</span>
+      <div>
+        <div class="cap-titulo">Folha de Exercícios — Seu plano pessoal <span class="bonus-tag">incluso</span></div>
+        <div class="cap-desc">Tabelas para preencher com seus números reais: diagnóstico, seus 3 cortes e metas de 30/60/90 dias.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ── PARA QUEM ───────────────────────────────────────────────── -->
+<section>
+  <p class="section-label">Para quem é isso</p>
+  <h2>Esse guia é para você se...</h2>
+
+  <div class="pq-grid">
+    <div class="pq-card sim">
+      <h4>Faz sentido</h4>
+      <ul>
+        <li>Você ganha até R$4.000 líquidos por mês</li>
+        <li>Sua principal dívida é no cartão de crédito</li>
+        <li>Você paga o mínimo ou pouco acima disso</li>
+        <li>Já tentou se organizar antes e não manteve</li>
+        <li>Precisa de um plano específico, não de teoria</li>
+      </ul>
+    </div>
+    <div class="pq-card nao">
+      <h4>Não é para você se</h4>
+      <ul>
+        <li>Você quer aprender a investir em ações</li>
+        <li>Sua dívida principal é em financiamento imobiliário</li>
+        <li>Você já tem reserva de emergência formada</li>
+        <li>Está procurando planilha complexa de gestão</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── GARANTIA ───────────────────────────────────────────────── -->
+<section>
+  <p class="section-label">Risco zero</p>
+  <h2>Garantia de 7 dias</h2>
+  <div class="garantia-box">
+    <div class="garantia-icon">🛡</div>
+    <div class="garantia-body">
+      <h3>Leu e não gostou? Devolvemos.</h3>
+      <p>Se dentro de 7 dias você achar que o conteúdo não vale o que pagou, basta pedir o reembolso pela Kiwify. Sem pergunta, sem burocracia, sem necessidade de explicação. O risco é inteiramente nosso.</p>
+    </div>
+  </div>
+  <p class="body-text" style="font-size:14px;color:var(--ink3);">Isso existe porque o guia precisa funcionar para o seu caso específico. Se não funcionar, você não paga.</p>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────── -->
+<div class="cta-bg" id="comprar">
+<section>
+  <p class="section-label" style="color:#93C5FD;">Acesso imediato</p>
+  <h2>Comece hoje</h2>
+  <p style="color:#94A3B8;font-size:15px;max-width:420px;margin:0 auto;">
+    Quanto você paga de juros no cartão por mês? Se for mais de R$27, esse guia já se paga no primeiro mês.
+  </p>
+
+  <div class="price-block">
+    <div class="price-label">Acesso completo — pagamento único</div>
+    <div class="price-main"><sup>R$</sup>27</div>
+    <div class="price-old">De R$67</div>
+    <a href="https://pay.kiwify.com.br/3Sa7ZRV" class="btn-cta">Quero o Cartão Zero agora</a>
+    <div class="btn-sub">Acesso imediato por PDF • Funciona no celular</div>
+  </div>
+
+  <div class="cta-includes">
+    <span class="cta-badge">Guia completo em PDF</span>
+    <span class="cta-badge">Folha de exercícios</span>
+    <span class="cta-badge">Garantia de 7 dias</span>
+    <span class="cta-badge">Acesso imediato</span>
+  </div>
+</section>
+</div>
+
+<!-- ── FAQ ────────────────────────────────────────────────────── -->
+<section>
+  <p class="section-label">Dúvidas</p>
+  <h2>Perguntas frequentes</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        O método funciona se minha dívida for muito alta?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Depende do tamanho da dívida em relação ao seu salário. O guia inclui um capítulo específico sobre renegociação — que é a ferramenta certa quando a dívida é maior que 3 vezes o salário. O método dos 3 Cortes e a renegociação funcionam juntos. O que o guia não promete é milagre: se a dívida for desproporcional ao salário, o caminho é mais longo, mas ainda existe — e o guia mostra qual é.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Precisa ter conhecimento de finanças para entender?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Não. O guia foi escrito especificamente para quem nunca estudou finanças pessoais. Sem jargão, sem planilha complexa. Cada ação é explicada com exemplos de valores reais.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Funciona para quem tem mais de um cartão?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Sim. O guia tem uma seção específica sobre o erro do "cartão reserva" — quando você corta gastos num cartão mas compensa no outro. A estratégia para quem tem mais de um cartão é diferente da de quem tem só um, e está explicada no capítulo 2.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Em quanto tempo recebo depois de comprar?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Imediato. Assim que o pagamento é confirmado pela Kiwify, você recebe o link de acesso por e-mail. O PDF pode ser baixado e lido no celular, computador ou tablet.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        E se eu não gostar?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Garantia incondicional de 7 dias. Basta solicitar o reembolso pela Kiwify. Você recebe o dinheiro de volta sem necessidade de explicação.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Isso é assessoria financeira?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Não. Este guia é material educativo e informativo de uso pessoal. Não substitui assessoria financeira profissional. As estratégias apresentadas são baseadas em práticas gerais de organização financeira pessoal — não são recomendações individualizadas.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <p><strong style="color:#64748B">Cartão Zero — Método dos 3 Cortes</strong></p>
+  <p style="margin-top:6px;">Material educativo de uso pessoal. Não constitui assessoria financeira profissional.</p>
+  <p style="margin-top:6px;">Dúvidas: contato via Kiwify</p>
+</footer>
+
+<!-- ── STICKY CTA ─────────────────────────────────────────────── -->
+<div class="sticky-cta">
+  <div>
+    <div class="sticky-price">R$ 27</div>
+    <div class="sticky-sub">Acesso imediato</div>
+  </div>
+  <a href="https://pay.kiwify.com.br/3Sa7ZRV" class="sticky-btn">Quero agora →</a>
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
